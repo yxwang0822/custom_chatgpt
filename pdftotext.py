@@ -39,7 +39,7 @@ def main():
             output_file_path = os.path.join(output_path, output_file_name)
             #print(f'**** input path {input_path} | output_path {output_path} | ofn {output_file_name}')
             # Convert PDF to plain text
-            with open(input_file_path, 'rb') as input_file, open(output_file_path, 'w') as output_file:
+            with open(input_file_path, 'rb') as input_file, open(output_file_path, 'w', encoding='utf-8') as output_file:
                 reader = PyPDF2.PdfReader(input_file)
                 for page_num in range(len(reader.pages)):
                     page = reader.pages[page_num]
